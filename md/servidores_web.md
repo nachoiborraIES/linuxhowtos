@@ -306,13 +306,13 @@ sudo systemctl restart php7.x-fpm
 
 4. Indicamos a Nginx que las solicitudes a páginas PHP las pase al procesador que hemos instalado. Para ello, abrimos el archivo del host virtual que queramos configurar (por ejemplo, `/etc/nginx/sites-available/default`, o cualquier otro que hayamos creado) y hacemos lo siguiente:
 
-   * En primer lugar, añadir el archivo index.php como uno de los posibles archivos de inicio:
+    * En primer lugar, añadir el archivo index.php como uno de los posibles archivos de inicio:
 
 ```
 index index.php index.html ...
 ```
 
-   * Descomentamos el siguiente bloque de directivas, y lo dejamos como sigue (sustituimos, de nuevo, la x por nuestra versión de PHP):
+    * Descomentamos el siguiente bloque de directivas, y lo dejamos como sigue (sustituimos, de nuevo, la x por nuestra versión de PHP):
 
 ```
 location ~ \.php$ {
