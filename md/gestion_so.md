@@ -2,8 +2,8 @@
 
 En este documento se explican las instrucciones para algunas operaciones habituales de gestión del sistema operativo Debian y derivados (Ubuntu, Lubuntu, etc).
 
-* [Crear usuarios y grupos](#crear-usuarios-y-grupos)
-* [Cambiar configuración del teclado](#cambiar-configuración-del-teclado)
+* [Crear usuarios y grupos](#Crear-usuarios-y-grupos)
+* [Cambiar configuración del teclado](#Cambiar-configuración-del-teclado)
 
 ## Crear usuarios y grupos
 
