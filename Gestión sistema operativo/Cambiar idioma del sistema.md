@@ -1,0 +1,3 @@
+# Cambiar idioma del sistema
+
+En ocasiones con la instalación inicial (o si descargamos una máquina virtual ya hecha en otro idioma) la configuración inicial de idioma no es la correcta. Para cambiarla, en **Lubuntu** debemos ir al menú *Preferences* > *Language Support*, e instalar el paquete de idiomas deseado. Tras instalarlo, debemos arrastrarlo al inicio de la lista de idiomas disponibles, para que sea el idioma por defecto, y después pulsar en el botón *Apply System-Wide* para aplicar los cambios a todo el sistema, e incluso renombrar las carpetas de Descargas, Escritorio, etc.
