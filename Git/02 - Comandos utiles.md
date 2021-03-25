@@ -94,6 +94,35 @@ node_modules/
 
 [Aquí](https://github.com/github/gitignore) podemos encontrar un listado de archivos `.gitignore` con elementos predefinidos de acuerdo a diferentes tipos de proyectos o lenguajes. Por ejemplo, qué elementos se excluyen típicamente en proyectos Node, Laravel, aplicaciones Java...
 
+## 4. Uso de ramas
+
+Una rama es un puntero a un *commit* determinado, y cada repositorio debe tener al menos una rama (la rama principal de todo repositorio es la rama *master*, por defecto). Además, existe un puntero llamado HEAD que apunta a la rama en la que estamos ahora mismo.
+
+Trabajar con ramas aporta algunas ventajas:
+
+* Podemos crear ramas para hacer pruebas que no alteren el código "real" que haya ahora mismo en producción.
+* Permiten separar el trabajo en subproyectos o subtareas independientes, de forma que no interfieran unas con otras.
+
+### 4.1. Creación de ramas
+
+Las ramas se crean con el comando `git branch`:
+
+```
+git branch nombre_rama
+```
+
+Se crea una rama apuntando al *commit* en el que estamos actualmente.
+
+### 4.2. Cambiar de rama
+
+Los cambios de rama son automáticos, y el directorio de trabajo cambia automáticamente al estado actual de la rama a la que vamos. Para cambiar de rama usamos el comando `git checkout`:
+
+```
+git checkout nombre_rama
+```
+
+
+
 
 
 
