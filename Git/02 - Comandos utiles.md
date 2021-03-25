@@ -66,6 +66,22 @@ git show cb1fd6f8
 
 Con el comando `git diff` vemos qué cosas han cambiado de momento en la versión actual (los que aún no se han guardado con *commit*).
 
+### 2.3.3. Asociar etiquetas a *commits*
+
+Podemos asociar etiquetas etiquetas al último *commit* realizado, de forma que nos sea más fácil referenciarlo después, en operaciones como `git show` y no tengamos que acudir a su código *hash*. Para ello basta con usar el comando `git tag` seguido del nombre de etiqueta que queramos poner. Por ejemplo, un número de versión:
+
+```
+git tag v1.0
+```
+
+Esto se aplicará, como decimos, al último *commit* realizado. Después, podemos ver la información de ese commit o sus cambios con `git show v1.0`, además de por su código *hash*.
+
+Si queremos asociar la etiqueta a un *commit* que no sea el último, debemos indicar el código *hash* del *commit* en cuestión:
+
+```
+git tag v1.0 cb1fd6f8
+```
+
 ## 3. El archivo .gitignore
 
 El archivo `.gitignore` se puede incluir en la raíz de un repositorio Git para definir en él qué archivos o carpetas no queremos incluir en las operaciones. Por ejemplo, archivos ejecutables, carpetas tipo *node_modules* que pueden ser muy pesadas y se pueden auto-generar, etc. La estructura de este archivo es sencilla: añadiremos una línea por cada uno de los archivos o carpetas que no queramos tener en cuenta.
