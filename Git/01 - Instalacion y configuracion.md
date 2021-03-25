@@ -56,4 +56,4 @@ En el caso de Linux, es:
 git config --global credential.helper cache
 ```
 
-Con esto ya tendremos Git listo para usarse desde línea de comandos, e incluso desde diversos entornos que lo integren.
+Con esto ya tendremos Git listo para usarse desde línea de comandos, e incluso desde diversos entornos que lo integren. Podemos revisar que todo esté bien establecido con el comando `git config --list`.
