@@ -46,6 +46,11 @@ Tras este comando, los archivos afectados pasarán al área de preparados (*stag
 
 El comando `git commit` permite confirmar los cambios de anteriores operaciones `git add`, y generar así una nueva versión de la base de datos.
 
+```
+git commit -m "mensaje descriptivo del commit"
+```
+
+Tras la operación de *commit* los archivos afectados pasan del estado *staged* al estado *unmodified* (sin modificar desde la última versión guardada). Podemos consultar el histórico de versiones con el comando `git log`. Si volvemos a hacer cambios en cualquier archivo, pasará a estado *modified* y deberemos repetir el comando `git add` correspondiente para marcarlo como *staged* y hacer después el nuevo *commit*.
 
 
 
