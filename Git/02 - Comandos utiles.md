@@ -54,6 +54,12 @@ git commit -m "mensaje descriptivo del commit"
 
 Tras la operación de *commit* los archivos afectados pasan del estado *staged* al estado *unmodified* (sin modificar desde la última versión guardada). Podemos consultar el histórico de versiones con el comando `git log`. Si volvemos a hacer cambios en cualquier archivo, pasará a estado *modified* y deberemos repetir el comando `git add` correspondiente para marcarlo como *staged* y hacer después el nuevo *commit*.
 
+Alternativamente, también podemos usar la opción `-a`, para que se haga una operación `add` automáticamente antes, y añada los archivos pendientes a la zona de *staged*:
+
+```
+git commit -a -m "mensaje descriptivo"
+```
+
 #### 2.3.1. Ver cambios entre versiones
 
 Con el comando `git show` podemos ver los cambios de una versión. Si no especificamos ningún parámetro adicional, nos muestra los cambios realizados en el último *commit*. Si queremos consultar cambios de algún *commit* previo, debemos indicar la referencia de dicho *commit* (un código *hash* que se genera). En realidad, basta con que indiquemos los primeros caracteres de esa referencia. Por ejemplo:
@@ -115,12 +121,18 @@ Se crea una rama apuntando al *commit* en el que estamos actualmente.
 
 ### 4.2. Cambiar de rama
 
-Los cambios de rama son automáticos, y el directorio de trabajo cambia automáticamente al estado actual de la rama a la que vamos. Para cambiar de rama usamos el comando `git checkout`:
+Los cambios de rama son automáticos, y el directorio de trabajo (y el puntero HEAD) cambian automáticamente al estado actual de la rama a la que vamos. Para cambiar de rama usamos el comando `git checkout`:
 
 ```
 git checkout nombre_rama
 ```
+### 4.3. Mostrar ramas
 
+Con el comando `git log`, que muestra un histórico de cambios en el repositorio, podemos ver gráficamente la situación de las ramas y sus dependencias usando la opción `--graph`:
+
+```
+git log --graph
+```
 
 
 
