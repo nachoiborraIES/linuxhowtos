@@ -129,6 +129,14 @@ git checkout nombre_rama
 
 El comando `git status` nos da información de en qué rama estamos actualmente.
 
+También podemos crear una rama y cambiar inmediatamente a esa rama con este comando:
+
+```
+git checkout -b nombre_rama
+```
+
+El comando anterior es una abreviatura de las operaciones *branch* (reflejada en el parámetro `-b`) y *checkout*.
+
 ### 4.3. Mostrar ramas
 
 Con el comando `git log`, que muestra un histórico de cambios en el repositorio, podemos ver gráficamente la situación de las ramas y sus dependencias usando la opción `--graph`:
