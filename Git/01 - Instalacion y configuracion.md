@@ -44,6 +44,8 @@ Opcionalmente, podemos hacer un par de pasos más. Uno de ellos es elegir el edi
 git config --global core.editor notepad
 ```
 
+Este editor se lanzará automáticamente en ciertas ocasiones. Por ejemplo, cuando hagamos una operación *commit* y no especifiquemos un mensaje asociado, Git abrirá el editor para que indiquemos dicho mensaje.
+
 En segundo lugar, podemos especificar que las credenciales de acceso a GitHub se almacenen automáticamente en el sistema, para que no nos pida la contraseña cada vez que conectemos con un repositorio remoto. En el caso de Windows, la opción es:
 
 ```
