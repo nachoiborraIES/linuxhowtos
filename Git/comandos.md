@@ -16,11 +16,39 @@ git init
 
 Esto inicializará la carpeta como un repositorio Git. Internamente se habrá creado una carpeta oculta llamada `.git`, donde se almacena toda la base de datos del repositorio. No tenemos que preocuparnos por dicha carpeta.
 
-Al repositorio podemos o bien incorporar archivos nuevos (*unmarked*) o bien editar archivos ya existentes, que pasarían a estar en estado modificado (*modified*). En cualquiera de los dos casos, para guardar los cambios debemos pasar esos archivos al área de preparación (*staged*), para que con una operación de *commit* se almacene en la base de datos (local) esa nueva versión de los mismos. Veremos estos comandos más adelante.
+Al repositorio podemos o bien incorporar archivos nuevos (*unmarked*) o bien editar archivos ya existentes, que pasarían a estar en estado modificado (*modified*). En cualquiera de los dos casos, para guardar los cambios debemos pasar esos archivos al área de preparación (*staged*), para que con una operación de *commit* se almacene en la base de datos (local) esa nueva versión de los mismos. Veremos estos comandos a continuación.
 
 ### 2.1. Estado del repositorio
 
 Con el comando `git status` podemos ver en todo momento el estado del repositorio, incluyendo las ramas actuales, commits realizados, etc.
+
+### 2.2. Añadir archivos nuevos o modificados
+
+Si añadimos un archivo nuevo con contenido (por ejemplo, un código fuente o un archivo de texto), y lanzamos el comando `git status` anterior, nos avisará de que hay archivo(s) sin seguimiento, que deben darse de alta en el repositorio mediante el comando `git add`. Lo mismo ocurrirá si hemos modificado un archivo existente.
+
+El comando `git add` tiene dos variantes:
+
+Esta primera variante sirve para dar de alta un único archivo (nuevo o modificado)
+
+```
+git add nombre_archivo
+```
+
+Esta segunda opción sive para dar de alta todos los archivos nuevos o modificados:
+
+```
+git add .
+```
+
+Tras este comando, los archivos afectados pasarán al área de preparados (*staged*), para ser incluidos en el próximo *commit*.
+
+### 2.3. Confirmar cambios con *commit*
+
+El comando `git commit` permite confirmar los cambios de anteriores operaciones `git add`, y generar así una nueva versión de la base de datos.
+
+
+
+
 
 
 
