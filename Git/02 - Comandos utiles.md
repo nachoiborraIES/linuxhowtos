@@ -42,6 +42,8 @@ git add .
 
 Tras este comando, los archivos afectados pasarán al área de preparados (*staged*), para ser incluidos en el próximo *commit*.
 
+Si, después de hacer `git add` queremos seguir haciendo cambios en alguno de los archivos implicados, no hay problema. Luego deberemos volver a hacer `git add` para añadir también esos nuevos cambios.
+
 ### 2.3. Confirmar cambios con *commit*
 
 El comando `git commit` permite confirmar los cambios de anteriores operaciones `git add`, y generar así una nueva versión de la base de datos.
@@ -60,7 +62,9 @@ Con el comando `git show` podemos ver los cambios de una versión. Si no especif
 git show cb1fd6f8
 ```
 
+### 2.3.2. Ver cambios en la versión actual
 
+Con el comando `git diff` vemos qué cosas han cambiado de momento en la versión actual (los que aún no se han guardado con *commit*).
 
 
 
