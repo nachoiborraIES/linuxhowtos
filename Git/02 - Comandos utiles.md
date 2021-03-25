@@ -139,23 +139,43 @@ El comando anterior es una abreviatura de las operaciones *branch* (reflejada en
 
 ### 4.3. Mostrar ramas
 
-Con el comando `git log`, que muestra un histórico de cambios en el repositorio, podemos ver gráficamente la situación de las ramas y sus dependencias usando la opción `--graph`:
+Con el comando `git log`, que muestra un histórico de cambios en el repositorio, podemos ver gráficamente la situación de las ramas y sus dependencias usando la opción `--graph` y la opción `--all` para que incluya todas las ramas:
 
 ```
-git log --graph
+git log --graph --all
 ```
 
 También podemos ver un listado de todas las ramas creadas con `git branch` (sin parámetros).
 
 ### 4.4. Fusionar ramas
 
-Podemos unir los trabajos de dos ramas, cosa que funcionará correctamente siempre y cuando no haya solapamientos en dichos trabajos. Para ello, nos situamos con `git checkout` en la rama donde queremos aglutinar todo el trabajo, y ejecutamos el comando `git merge` indicando el nombre de la rama que queremos fusionar con la actual:
+Podemos unir los trabajos de dos ramas, cosa que funcionará correctamente siempre y cuando no haya solapamientos en dichos trabajos. Para ello, nos situamos con `git checkout` en la rama donde queremos aglutinar todo el trabajo (la llamaremos rama "principal"), y ejecutamos el comando `git merge` indicando el nombre de la rama que queremos fusionar con la actual (a la que llamaremos rama "secundaria"):
 
 ```
 git merge nombre_rama_a_fusionar
 ```
 
-En el caso de que la fusión no implique una "vuelta atrás" (es decir, la rama secundaria ha sido una continuación del último estado de la rama principal), lo que se hace es un *fast-forward*: se adelanta la rama principal hasta hacerla coincidir con el estado actual de la secundaria. Sin embargo, si la rama secundaria a fusionar parte de un commit anterior de la rama principal, entonces lo que hace Git es un nuevo commit que fusione ambas ramas, juntando los cambios posteriores a ese punto común de una y otra rama. Es una operación más costosa, donde se corre el riesgo de que haya cambios incompatibles en algunos ficheros.
+#### 4.4.1. Posibles resultados y conflictos
+
+Existen dos tipos principales de fusiones a tener en cuenta:
+
+* **Fast-forward**: es la fusión más sencilla, cuando la fusión no implica una "vuelta atrás", es decir, la rama secundaria ha sido una continuación del último estado o *commit* de la rama principal. En este caso, se adelanta la rama principal hasta hacerla coincidir con el estado actual de la secundaria. 
+* **Merge**: si la rama secundaria a fusionar parte de un commit anterior de la rama principal, entonces lo que hace Git es un nuevo commit que fusione ambas ramas, juntando los cambios posteriores a ese punto común de una y otra rama. Es una operación más costosa, donde se corre el riesgo de que haya cambios incompatibles o conflictos en algunos ficheros. 
+   * En el caso de que no haya conflictos, la rama principal apuntará a ese nuevo *commit*, y la rama secundaria se quedará apuntando donde apuntaba. Si queremos que ambas ramas apunten al último y más actualizado *commit*, deberemos ir a la rama secundaria y aplicar de nuevo un *merge* para fusionarla con la principal en el nuevo punto (lo que sería un *fast-forward*).
+
+Los **conflictos** se dan, por ejemplo, cuando se ha cambiado la misma línea en el mismo fichero por parte de ambas ramas. Esto impedirá que se pueda hacer un *merge* automático, y exigirá que el usuario lo solucione manualmente. Al editar el archivo con conflicto, Git habrá dejado unas marcas en la(s) línea(s) que han provocado dicho conflicto, indicando desde qué rama se ha hecho qué cambio. Por ejemplo:
+
+```
+<<<<<<<<< HEAD
+texto añadido en la línea por parte de rama actual
+=========
+texto añadido en la línea por parte de rama secundaria rama1
+>>>>>>>>> rama1
+```
+
+Deberemos eliminar las marcas y dejar el contenido conflictivo corregido. Después, se haría una operación de *add* y *commit* para confirmar esos cambios y generar el *commit* que integra los cambios de las dos ramas. 
+
+Para ver qué archivos tienen conflictos después de una operación `merge` fallida, podemos emplear el comando `git status`.
 
 ### 4.5. Borrar ramas
 
