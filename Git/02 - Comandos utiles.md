@@ -155,6 +155,8 @@ Podemos unir los trabajos de dos ramas, cosa que funcionará correctamente siemp
 git merge nombre_rama_a_fusionar
 ```
 
+En el caso de que la fusión no implique una "vuelta atrás" (es decir, la rama secundaria ha sido una continuación del último estado de la rama principal), lo que se hace es un *fast-forward*: se adelanta la rama principal hasta hacerla coincidir con el estado actual de la secundaria. Sin embargo, si la rama secundaria a fusionar parte de un commit anterior de la rama principal, entonces lo que hace Git es un nuevo commit que fusione ambas ramas, juntando los cambios posteriores a ese punto común de una y otra rama. Es una operación más costosa, donde se corre el riesgo de que haya cambios incompatibles en algunos ficheros.
+
 ### 4.5. Borrar ramas
 
 Para borrar una rama usamos el comando `git branch` con la opción `-d` seguida del nombre de la rama a borrar. Puede ser útil, por ejemplo, tras fusionar dos ramas, para eliminar la rama secundaria que se ha fusionado:
