@@ -137,7 +137,7 @@ Con el comando `git log`, que muestra un histórico de cambios en el repositorio
 git log --graph
 ```
 
-
+También podemos ver un listado de todas las ramas creadas con `git branch` (sin parámetros).
 
 
 
