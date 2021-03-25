@@ -71,11 +71,12 @@ Con el comando `git diff` vemos qué cosas han cambiado de momento en la versió
 El archivo `.gitignore` se puede incluir en la raíz de un repositorio Git para definir en él qué archivos o carpetas no queremos incluir en las operaciones. Por ejemplo, archivos ejecutables, carpetas tipo *node_modules* que pueden ser muy pesadas y se pueden auto-generar, etc. La estructura de este archivo es sencilla: añadiremos una línea por cada uno de los archivos o carpetas que no queramos tener en cuenta.
 
 ```
-node_modules
+node_modules/
 *.exe
 *.tmp
 ```
 
+[Aquí](https://github.com/github/gitignore) podemos encontrar un listado de archivos `.gitignore` con elementos predefinidos de acuerdo a diferentes tipos de proyectos o lenguajes. Por ejemplo, qué elementos se excluyen típicamente en proyectos Node, Laravel, aplicaciones Java...
 
 
 
