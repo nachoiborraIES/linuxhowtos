@@ -147,6 +147,25 @@ git log --graph
 
 También podemos ver un listado de todas las ramas creadas con `git branch` (sin parámetros).
 
+### 4.4. Fusionar ramas
+
+Podemos unir los trabajos de dos ramas, cosa que funcionará correctamente siempre y cuando no haya solapamientos en dichos trabajos. Para ello, nos situamos con `git checkout` en la rama donde queremos aglutinar todo el trabajo, y ejecutamos el comando `git merge` indicando el nombre de la rama que queremos fusionar con la actual:
+
+```
+git merge nombre_rama_a_fusionar
+```
+
+### 4.5. Borrar ramas
+
+Para borrar una rama usamos el comando `git branch` con la opción `-d` seguida del nombre de la rama a borrar. Puede ser útil, por ejemplo, tras fusionar dos ramas, para eliminar la rama secundaria que se ha fusionado:
+
+```
+git branch -d nombre_rama_a_borrar
+```
+
+
+
+
 
 
 
