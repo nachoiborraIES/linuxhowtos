@@ -66,6 +66,15 @@ git show cb1fd6f8
 
 Con el comando `git diff` vemos qué cosas han cambiado de momento en la versión actual (los que aún no se han guardado con *commit*).
 
+## 3. El archivo .gitignore
+
+El archivo `.gitignore` se puede incluir en la raíz de un repositorio Git para definir en él qué archivos o carpetas no queremos incluir en las operaciones. Por ejemplo, archivos ejecutables, carpetas tipo *node_modules* que pueden ser muy pesadas y se pueden auto-generar, etc. La estructura de este archivo es sencilla: añadiremos una línea por cada uno de los archivos o carpetas que no queramos tener en cuenta.
+
+```
+node_modules
+*.exe
+*.tmp
+```
 
 
 
