@@ -285,7 +285,7 @@ Como hemos visto, las ramas remotas tienen la nomenclatura ´nombre_del_remoto/n
 
 Por defecto, la rama local por defecto *master* se asocia con la rama remota por defecto *origin/master*, pero ¿qué ocurre cuando creamos nuevas ramas? Pueden darse dos situaciones:
 
-* Que esa rama haya sido creada en el repositorio remoto (creada por nosotros u otra persona). En este caso, si hacemos un `git fetch` o un `git pull`, la rama se descarga, pero no se asocia a ninguna rama local. Ocurre lo mismo cuando clonamos por primera vez un repositorio con varias ramas: Git sólo nos crea en local la rama principal como *master*, pero no el resto. Para crear una rama local asociada a una de las remotas, usamos `git checkout` seguido del nombre de la rama remota. Automáticamente, *git* creará una rama local con el mismo nombre y las asociará:
+* Que esa rama haya sido creada en el repositorio remoto (creada por nosotros u otra persona). En este caso, si hacemos un `git fetch` o un `git pull`, la rama se descarga, pero no se asocia a ninguna rama local. Ocurre lo mismo cuando clonamos por primera vez un repositorio con varias ramas: Git sólo nos crea en local la rama principal como *master*, pero no el resto. Para crear una rama local asociada a una de las remotas, usamos `git checkout` seguido del nombre de la rama remota. Automáticamente, *git* creará una rama local con el mismo nombre y las asociará (IMPORTANTE no usar `git branch` en este caso para crear una rama local con el mismo nombre, porque Git no la asociaría con la remota y podríamos tener problemas después):
 
 ``` 
 git checkout rama1
