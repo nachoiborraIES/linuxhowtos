@@ -225,6 +225,8 @@ Ejemplo de salida:
 git remote -v
 origin	https://github.com/schacon/ticgit (fetch)
 origin	https://github.com/schacon/ticgit (push)
+pb	https://github.com/paulboone/ticgit (fetch)
+pb	https://github.com/paulboone/ticgit (push)
 ```
 
 #### 5.1.2. Renombrar y eliminar remotos
@@ -249,7 +251,11 @@ El comando `git fetch` permite incorporar a nuestro repositorio local todos los 
 git fetch origin
 ```
 
-Este comando sólo trae la información nueva, pero no realiza ningún tipo de combinación. Incorporará también las ramas nuevas que se hayan creado y demás, pero deberemos ser nosotros quienes combinemos ramas o hagamos estas tareas manualmente, a través de `git commit` o `git merge`.
+Este comando sólo trae la información nueva, pero no realiza ningún tipo de combinación. Incorporará también las ramas nuevas que se hayan creado y demás, pero deberemos ser nosotros quienes combinemos ramas o hagamos estas tareas manualmente, a través de `git merge`. Por ejemplo, así fusionaríamos la rama recién descargada del remoto con nuestra rama local, para que ambas queden actualizadas:
+
+```
+git merge origin/master
+```
 
 Como alternativa, también se tiene disponible el comando `git pull`, que descarga los cambios de una rama determinada y la mezcla automáticamente con la rama actual de nuestro repositorio local (una combinación de `fetch` y `merge`).
 
@@ -264,3 +270,7 @@ Para subir cambios a un repositorio remoto usamos el comando `git push`, indican
 ```
 git push origin master
 ```
+
+Si nuestra rama local está directamente asociada a la rama remota que queremos actualizar (esto lo podemos averiguar con `git status`), no hacen falta los parámetros, podemos hacer simplemente `git push`.
+
+Con `git log --all` podemos ver la situación de todas las ramas. Aparecerán también las ramas remotas, y en qué punto de los cambios está actualizada cada una.
