@@ -6,7 +6,9 @@ En este documento se recogen algunos comandos útiles de `git` para control de v
 
 Podemos utilizar el comando `git help` seguido del comando del que queremos obtener ayuda, para que en consola nos muestre las opciones disponibles para ese comando. Por ejemplo, con `git help config` aparecerán las opciones disponibles para el comando `git config` que habremos utilizado previamente para configurar Git en el sistema (ver documento de *instalación y configuración*).
 
-## 2. Crear un repositorio local
+## 2. Trabajar con repositorios locales
+
+### 2.1. Crear un repositorio local
 
 Para crear un repositorio local, creamos una carpeta con el nombre que queramos, y desde dentro de la carpeta escribimos:
 
@@ -18,7 +20,7 @@ Esto inicializará la carpeta como un repositorio Git. Internamente se habrá cr
 
 Al repositorio podemos o bien incorporar archivos nuevos (*unmarked*) o bien editar archivos ya existentes, que pasarían a estar en estado modificado (*modified*). En cualquiera de los dos casos, para guardar los cambios debemos pasar esos archivos al área de preparación (*staged*), para que con una operación de *commit* se almacene en la base de datos (local) esa nueva versión de los mismos. Veremos estos comandos a continuación.
 
-### 2.1. Estado del repositorio
+#### 2.1.1. Estado del repositorio
 
 Con el comando `git status` podemos ver en todo momento el estado del repositorio, incluyendo las ramas actuales, commits realizados, etc.
 
@@ -274,3 +276,28 @@ git push origin master
 Si nuestra rama local está directamente asociada a la rama remota que queremos actualizar (esto lo podemos averiguar con `git status`), no hacen falta los parámetros, podemos hacer simplemente `git push`.
 
 Con `git log --all` podemos ver la situación de todas las ramas. Aparecerán también las ramas remotas, y en qué punto de los cambios está actualizada cada una.
+
+### 5.4. Más sobre ramas remotas
+
+Como hemos visto, las ramas remotas tienen la nomenclatura ´nombre_del_remoto/nombre_de_la_rama`. Son ramas de sólo lectura, que nos sirven para traer a nuestro repositorio local los datos de la rama, pero no podemos modificarlas (salvo haciendo `git push`).
+
+#### 5.4.1. Asociación de ramas locales y remotas
+
+Por defecto, la rama local por defecto *master* se asocia con la rama remota por defecto *origin/master*, pero ¿qué ocurre cuando creamos nuevas ramas? Pueden darse dos situaciones:
+
+* Que esa rama haya sido creada en el repositorio remoto (creada por nosotros u otra persona). En este caso, si hacemos un `git fetch` o un `git pull`, la rama se descarga, pero no se asocia a ninguna rama local. Ocurre lo mismo cuando clonamos por primera vez un repositorio con varias ramas: Git sólo nos crea en local la rama principal como *master*, pero no el resto. Para crear una rama local asociada a una de las remotas, usamos `git checkout` seguido del nombre de la rama remota. Automáticamente, *git* creará una rama local con el mismo nombre y las asociará:
+
+``` 
+git checkout rama1
+```
+
+* Que esa rama la creemos nosotros en local. En este caso, podemos hacer un *push* de esa rama nueva para subirla a remoto, pero para que se asocie con la rama remota, debemos enlazarlo con uno de estos dos comandos(y suponiendo que trabajamos sobre el remoto *origin*):
+
+```
+git push -u origin nombre_rama_local
+git push --set-upstream origin nombre_rama_local
+```
+
+El hecho de asociar ramas no es obligatorio, pero facilita el no tener que pasar parámetros adicionales cada vez que necesitemos hacer `git push` o `git pull`.
+
+Podemos ver las asociaciones entre ramas actuales con el comando `git branch -vv`, y el listado de ramas remotas con `git branch -r` (en este último caso, no se visualizarán las ramas que aún no se hayan actualizado en local con `git fetch` o `git pull`).
