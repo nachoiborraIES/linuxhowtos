@@ -185,14 +185,11 @@ Para borrar una rama usamos el comando `git branch` con la opción `-d` seguida 
 git branch -d nombre_rama_a_borrar
 ```
 
+## 5. Trabajando con repositorios remotos
 
+Veremos ahora algunos comandos útiles para comunicar con repositorios remotos (alojados en GitHub).
 
-
-
-
-
-
-## Clonar un repositorio remoto
+### 5.1. Clonar un repositorio remoto
 
 Para clonar un repositorio remoto en nuestro sistema, nos colocamos en la carpeta donde queramos clonarlo (se creará una subcarpeta con el proyecto en sí), y ejecutamos el comando:
 
@@ -200,14 +197,70 @@ Para clonar un repositorio remoto en nuestro sistema, nos colocamos en la carpet
 git clone url_repositorio
 ```
 
-Dependiendo de si es un repositorio público o privado, es posible que nos pida las credenciales para acceder y descargarlo.
+Dependiendo de si es un repositorio público o privado, es posible que nos pida las credenciales para acceder y descargarlo. Una vez descargado, se le asigna un nombre por defecto, `origin`, para poderlo referenciar para futuras operaciones.
 
-## Actualizar un proyecto desde un repositorio remoto
+#### 5.1.1. Incluir más remotos
 
-Si queremos descargar los últimos cambios que haya hechos en un repositorio remoto sobre un proyecto local previamente clonado, desde la carpeta del proyecto ejecutamos este comando:
+Podemos añadir más URLs remotas que participen en este repositorio, de forma que en cualquier momento podemos descargar actualizaciones de cualquiera de ellas, e incluso subir cambios a los remotos para los que tengamos permiso. Esto se consigue con el comando:
+
+```
+git remote add alias url_remoto
+```
+
+El `alias` es un nombre corto a nuestra elección, que servirá para referenciar este remoto en futuras operaciones. Con el comando `git remote` a secas podemos ver un listado de los remotos que tenemos incorporados en el repositorio local actualmente, y con el comando `git remote show`, seguido del nombre de un remoto, podemos ver información detallada del mismo:
+
+```
+git remote show origin
+```
+
+También podemos usar la opción `-v` con `git remote` para conocer las URLs activas del remoto, y las operaciones permitidas:
+
+```
+git remote -v
+```
+
+Ejemplo de salida:
+
+```
+git remote -v
+origin	https://github.com/schacon/ticgit (fetch)
+origin	https://github.com/schacon/ticgit (push)
+```
+
+#### 5.1.2. Renombrar y eliminar remotos
+
+Para cambiar el nombre que le hemos dado a un remoto, usamos `git remote rename`, seguido del nombre viejo y el nombre nuevo que queremos darle:
+
+```
+git remote rename pb paul
+```
+
+Para eliminar un remoto, usamos el comando `git remote rm` seguido del nombre del remoto a eliminar:
+
+``` 
+git remote rm paul
+```
+
+### 5.2.  Actualizar contenidos desde un remoto
+
+El comando `git fetch` permite incorporar a nuestro repositorio local todos los cambios que ha habido en un remoto determinado desde que clonamos el repositorio (o desde la última vez que hicimos *fetch*). Si no especificamos nombre de remoto, por defecto se toma `origin`, aunque podemos especificarlo igualmente.
+
+```
+git fetch origin
+```
+
+Este comando sólo trae la información nueva, pero no realiza ningún tipo de combinación. Incorporará también las ramas nuevas que se hayan creado y demás, pero deberemos ser nosotros quienes combinemos ramas o hagamos estas tareas manualmente, a través de `git commit` o `git merge`.
+
+Como alternativa, también se tiene disponible el comando `git pull`, que descarga los cambios de una rama determinada y la mezcla automáticamente con la rama actual de nuestro repositorio local (una combinación de `fetch` y `merge`).
 
 ```
 git pull
 ```
 
-Nuevamente, dependiendo de si es un repositorio privado o público, es posible que nos pida las credenciales para acceder.
+### 5.3. Subir cambios a un repositorio remoto
+
+Para subir cambios a un repositorio remoto usamos el comando `git push`, indicando el nombre del remoto al que subir los cambios, y la rama remota a la que queremos subir los cambios. Este comando sube los cambios a la rama *master* del remoto *origin*.
+
+```
+git push origin master
+```
