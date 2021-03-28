@@ -279,7 +279,7 @@ Con `git log --all` podemos ver la situación de todas las ramas. Aparecerán ta
 
 ### 5.4. Más sobre ramas remotas
 
-Como hemos visto, las ramas remotas tienen la nomenclatura ´nombre_del_remoto/nombre_de_la_rama`. Son ramas de sólo lectura, que nos sirven para traer a nuestro repositorio local los datos de la rama, pero no podemos modificarlas (salvo haciendo `git push`).
+Como hemos visto, las ramas remotas tienen la nomenclatura `nombre_del_remoto/nombre_de_la_rama`. Son ramas de sólo lectura, que nos sirven para traer a nuestro repositorio local los datos de la rama, pero no podemos modificarlas (salvo haciendo `git push`).
 
 #### 5.4.1. Asociación de ramas locales y remotas
 
