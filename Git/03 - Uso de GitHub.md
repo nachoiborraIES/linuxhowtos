@@ -69,3 +69,7 @@ git commit -m "Subidos cambios. Close #2"
 Al hacer el *push* de este *commit* se dará por cerrado el *issue* número 2.
 
 > **NOTA**: esta forma de cerrar *issues* sólo es posible, en principio, para la rama principal del repositorio.
+
+#### 3.2.1. Etiquetas
+
+Desde la opción *Labels* dentro de *Issues* podemos crear o editar etiquetas, que nos sirvan un poco para clasificar o catalogar los diferentes *issues*. Por ejemplo, por tipo de problema (error, revisión, etc) o por dificultad. Después, cuando creamos el *issue*, a la derecha tenemos una opción *Labels* para poderle asignar una etiqueta de las del catálogo.
