@@ -73,3 +73,11 @@ Al hacer el *push* de este *commit* se dará por cerrado el *issue* número 2.
 #### 3.2.1. Etiquetas
 
 Desde la opción *Labels* dentro de *Issues* podemos crear o editar etiquetas, que nos sirvan un poco para clasificar o catalogar los diferentes *issues*. Por ejemplo, por tipo de problema (error, revisión, etc) o por dificultad. Después, cuando creamos el *issue*, a la derecha tenemos una opción *Labels* para poderle asignar una etiqueta de las del catálogo.
+
+### 3.3. Proyectos
+
+La sección *Projects* permite organizar *issues* en planificaciones más complejas: crear tableros de planificación, prioridades, etc. Está estrechamente vinculada con la metodología ágil Kanban, de modo que podemos asignar a cada tarea su estado actual dentro del tablero Kanban. Podemos elegir una plantilla base (como por ejemplo *Automated kanban*) y se crea el tablero en cuestión. Podemos crear o arrastrar tareas entre las diferentes columnas. Con el botón "+" de cada columna podemos añadir tareas, y con el botón de *Add cards* podemos incluso utilizar *issues* abiertos como tarjetas del proyecto.
+
+### 3.4. Wikis
+
+Desde la sección *Wiki* podemos asociar una wiki al proyecto.
