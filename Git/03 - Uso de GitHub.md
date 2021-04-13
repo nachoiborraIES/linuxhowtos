@@ -25,7 +25,7 @@ Desde la página principal del repositorio, tenemos también un icono de *Settin
 * Establecer la rama por defecto desde el apartado *Branches*.
 * Establecer *webhooks*, servicios que se pueden adjuntar en un *commit* para ejecutar tareas adicionales (integración continua, despliegue, etc.)
 
-## 2. Clonado
+## 2. Clonar y gestionar cambios en repositorio remoto
 
 Para clonar un repositorio de GitHub en nuestra máquina, desde la página principal de dicho repositorio vamos al botón verde de *Clone or download* y copiamos la URL del repositorio. Desde un terminal, nos ubicamos en la carpeta donde queramos tener el repositorio y hacemos un `git clone`, pegando como parámetro la URL que hemos copiado. Al clonar, nuestra rama *master* local aparecerá ya automáticamente asociada con *origin/master*.
 
@@ -45,3 +45,27 @@ A la hora de crear ramas en el repositorio, podemos hacerlo de dos formas:
 ### 2.3. Historial de cambios
 
 Con el botón *History* vemos un historial de en qué *commits* se ha cambiado el fichero que estamos examinando. Con el botón *Blame* vemos más concretamente en qué commits se han cambiado qué líneas. El botón *Raw* nos permite ver el texto plano del archivo (útil para copiar y pegar).
+
+## 3. Otras funcionalidades de GitHub
+
+### 3.1. GitHub como red social
+
+En GitHub también podemos realizar algunas funciones típicas de una red social, tales como:
+
+* Seguir ciertos proyectos de otros desarrolladores (*Watch/Unwatch*)
+* Valorar los proyectos (*Star*)
+* Comentar los proyectos, o ciertos *commits*, o ciertas líneas de un determinado archivo. Estos comentarios se realizan en formato Markdown, con el editor que proporciona la plataforma.
+
+### 3.2. Issues
+
+Permiten llevar un listado de tareas pendientes en un repositorio. Dentro de la sección de *Issues* tenemos el botón *New issue* para crear nuevos, dándoles un título y una descripción (en formato Markdown). Los *issues* pueden estar abiertos o cerrados (en el caso de que ya se hayan resuelto). Para ello tenemos los botones *Comment* o *Close and comment*, según lo que queramos hacer con el *issue*.
+
+Los *issues* también se pueden cerrar automáticamente con un *commit*, si el en el mensaje del *commit* hacemos referencia a que queremos cerrar dicho *issue*. Esto se consigue finalizando el mensaje con ciertas palabras clave (como "Close", o "Fix"), seguidas del número de *issue* que queramos cerrar. Por ejemplo:
+
+```
+git commit -m "Subidos cambios. Close #2"
+```
+
+Al hacer el *push* de este *commit* se dará por cerrado el *issue* número 2.
+
+> **NOTA**: esta forma de cerrar *issues* sólo es posible, en principio, para la rama principal del repositorio.
