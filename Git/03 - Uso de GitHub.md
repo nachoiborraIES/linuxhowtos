@@ -74,6 +74,10 @@ Al hacer el *push* de este *commit* se dará por cerrado el *issue* número 2.
 
 Desde la opción *Labels* dentro de *Issues* podemos crear o editar etiquetas, que nos sirvan un poco para clasificar o catalogar los diferentes *issues*. Por ejemplo, por tipo de problema (error, revisión, etc) o por dificultad. Después, cuando creamos el *issue*, a la derecha tenemos una opción *Labels* para poderle asignar una etiqueta de las del catálogo.
 
+#### 3.2.2. Hitos (*milestones*)
+
+Los hitos son conjuntos de *issues* agrupados por un proyecto, característica o período de tiempo concreto, de forma que se pueden tratar, en parte, como una unidad.
+
 ### 3.3. Proyectos
 
 La sección *Projects* permite organizar *issues* en planificaciones más complejas: crear tableros de planificación, prioridades, etc. Está estrechamente vinculada con la metodología ágil Kanban, de modo que podemos asignar a cada tarea su estado actual dentro del tablero Kanban. Podemos elegir una plantilla base (como por ejemplo *Automated kanban*) y se crea el tablero en cuestión. Podemos crear o arrastrar tareas entre las diferentes columnas. Con el botón "+" de cada columna podemos añadir tareas, y con el botón de *Add cards* podemos incluso utilizar *issues* abiertos como tarjetas del proyecto.
@@ -81,3 +85,30 @@ La sección *Projects* permite organizar *issues* en planificaciones más comple
 ### 3.4. Wikis
 
 Desde la sección *Wiki* podemos asociar una wiki al proyecto.
+
+## 4. Trabajo colaborativo
+
+Existen varias formas de permitir trabajo en equipo en un repositorio GitHub:
+
+* Dar acceso de colaborador a otros usuarios (desde *Settings* > *Collaborators*, invitándolos con su usuario de GitHub).
+* A través de *forks* y *pull requests*.
+
+### 4.1. Fork y pull requests
+
+En el caso de que el propietario no nos haya añadido como colaboradores, pero queramos participar en el proyecto, podemos emplear este mecanismo. Para ello, localizamos el repositorio en el que queremos colaborar, y hacemos clic en el botón *Fork* (parte derecha de la ventana). Si tenemos más de una cuenta asociada a nuestro GitHub (caso de que trabajemos con instituciones, por ejemplo) podemos elegir a qué institución/cuenta añadir el repositorio. Se creará entonces una copia en esa ubicación del repositorio original. En el repositorio original aparecerá cuántos *forks* tiene hechos.
+
+Si queremos subir cambios al repositorio original, trabajaremos sobre nuestra copia, y una vez finalizado, haremos un **pull request** para solicitar al dueño del repositorio original que incorpore nuestros cambios. Para ello, después de haber hecho el *commit* y el *push* para subir los cambios a nuestro repositorio particular, vamos a la página principal de dicho repositorio, y vamos al botón *New pull request*, junto al desplegable de ramas, o bien desde la sección *Pull requests* (junto a las de *Issues* o *Wiki*). Al hacer esto, GitHub verificará que la actualización es posible (que no hay conflictos) y si es así nos dejará crear la petición, añadiendo opcionalmente un comentario a la misma. El propietario del repositorio original verá la opción de aceptar la *pull request* y mezclarla con su repositorio original. Si se acepta la *pull request*, aparecerá como un *commit* más en el repositorio original.
+
+En el caso de que el repositorio original sufra cambios, para incorporarlo al repositorio personal de nuestra cuenta debemos hacerlo vía comandos. añadiendo un nuevo remoto que enlace con el repositorio original:
+
+```
+git remote add nombre_remoto url_repositorio_original
+```
+
+Como nombre de dicho remoto se suele usar *upstream*, aunque no es obligatorio. Una vez asignado, y suponiendo que lo hemos llamado *upstream*, podemos descargar los cambios que hayan hecho otros desde ese repositorio original con:
+
+```
+git fetch upstream
+```
+
+
