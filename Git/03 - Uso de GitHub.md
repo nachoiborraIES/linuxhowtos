@@ -58,7 +58,11 @@ En GitHub también podemos realizar algunas funciones típicas de una red social
 
 ### 3.2. Issues
 
-Permiten llevar un listado de tareas pendientes en un repositorio. Dentro de la sección de *Issues* tenemos el botón *New issue* para crear nuevos, dándoles un título y una descripción (en formato Markdown). Los *issues* pueden estar abiertos o cerrados (en el caso de que ya se hayan resuelto). Para ello tenemos los botones *Comment* o *Close and comment*, según lo que queramos hacer con el *issue*.
+Permiten llevar un listado de tareas pendientes en un repositorio. Dentro de la sección de *Issues* tenemos el botón *New issue* para crear nuevos, dándoles un título y una descripción (en formato Markdown). 
+
+> **NOTA**: es posible que la sección de *Issues* no esté visible por defecto. Podemos activarla desde los *Settings* del repositorio.
+
+Los *issues* pueden estar abiertos o cerrados (en el caso de que ya se hayan resuelto). Para ello tenemos los botones *Comment* o *Close and comment*, según lo que queramos hacer con el *issue*.
 
 Los *issues* también se pueden cerrar automáticamente con un *commit*, si el en el mensaje del *commit* hacemos referencia a que queremos cerrar dicho *issue*. Esto se consigue finalizando el mensaje con ciertas palabras clave (como "Close", o "Fix"), seguidas del número de *issue* que queramos cerrar. Por ejemplo:
 
