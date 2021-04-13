@@ -109,6 +109,11 @@ Como nombre de dicho remoto se suele usar *upstream*, aunque no es obligatorio. 
 
 ```
 git fetch upstream
+git merge upstream/master
 ```
 
+Para subir estas actualizaciones a nuestro repositorio propio, debemos hacer `git push` después, evidentemente, ya que de lo contrario esos cambios sólo se habrán descargado en nuestra máquina local (no en GitHub).
 
+### 4.2. Organizaciones
+
+Desde el perfil de usuario, haciendo clic en el botón "+" de la parte superior derecha, podemos dar de alta organizaciones en nuestra cuenta de GitHub. En estas organizaciones podemos invitar a otros usuarios para que formen parte de ella, de forma que podemos crear proyectos asociados a estas organizaciones (en lugar de a nuestro usuario particular) y así vincularlos también con los usuarios que forman parte de esa organización. Se pueden hacer equipos de distintos miembros, dar permisos a cada equipo sobre ciertos repositorios (lectura, escritura, administración), etc.
