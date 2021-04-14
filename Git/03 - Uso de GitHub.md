@@ -121,3 +121,14 @@ Para subir estas actualizaciones a nuestro repositorio propio, debemos hacer `gi
 ### 4.2. Organizaciones
 
 Desde el perfil de usuario, haciendo clic en el botón "+" de la parte superior derecha, podemos dar de alta organizaciones en nuestra cuenta de GitHub. En estas organizaciones podemos invitar a otros usuarios para que formen parte de ella, de forma que podemos crear proyectos asociados a estas organizaciones (en lugar de a nuestro usuario particular) y así vincularlos también con los usuarios que forman parte de esa organización. Se pueden hacer equipos de distintos miembros, dar permisos a cada equipo sobre ciertos repositorios (lectura, escritura, administración), etc.
+
+## 5. GitHub pages
+
+GitHub pages es un servicio gratuito para alojamiento de webs estáticas (HTML + CSS + JavaScript). Su web de referencia es [pages.github.com](https://pages.github.com/). Desde ahí, podemos configurar GitHub pages para:
+
+* Un usuario u organización en concreto de nuestra cuenta. En este caso, tenemos un sitio web general para ese usuario o para esa organización (uno solo por usuario u organización). Se puede emplear como web personal o cosas similares. Para esto, debemos crear en GitHub un repositorio con nuestro nombre de usuario u organización, seguido del sufijo *.github.io*. Por ejemplo: *pepito123.github.io*. Luego, basta con clonarlo, e ir subiendo los cambios de páginas HTML, CSS o JavaScript. Podremos consultar la web en la URL indicada (*https://nombreusuario.github.io*).
+
+> **NOTA**: es posible que se tarden unos segundos/minutos en actualizar los cambios subidos al repositorio.
+> **NOTA**: si utilizamos herramientas como Jekyll para generar la web, es posible que se produzcan errores al publicar. Podremos verlos yendo a los *Settings* del repositorio en cuestión. De lo contrario, en esos *Settings* nos dirá que nuestra web está publicada.
+
+* Un proyecto o repositorio.
