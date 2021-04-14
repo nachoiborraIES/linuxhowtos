@@ -126,9 +126,9 @@ Desde el perfil de usuario, haciendo clic en el botón "+" de la parte superior 
 
 GitHub pages es un servicio gratuito para alojamiento de webs estáticas (HTML + CSS + JavaScript). Su web de referencia es [pages.github.com](https://pages.github.com/). Desde ahí, podemos configurar GitHub pages para:
 
-* Un usuario u organización en concreto de nuestra cuenta. En este caso, tenemos un sitio web general para ese usuario o para esa organización (uno solo por usuario u organización). Se puede emplear como web personal o cosas similares. Para esto, debemos crear en GitHub un repositorio con nuestro nombre de usuario u organización, seguido del sufijo *.github.io*. Por ejemplo: *pepito123.github.io*. Luego, basta con clonarlo, e ir subiendo los cambios de páginas HTML, CSS o JavaScript. Podremos consultar la web en la URL indicada (*https://nombreusuario.github.io*).
+* Un usuario u organización en concreto de nuestra cuenta. En este caso, tenemos un sitio web general para ese usuario o para esa organización (uno solo por usuario u organización). Se puede emplear como web personal o cosas similares. Para esto, debemos crear en GitHub un repositorio con nuestro nombre de usuario u organización, seguido del sufijo *.github.io*. Por ejemplo: *pepito123.github.io*. Luego, basta con clonarlo, e ir subiendo los cambios de páginas HTML, CSS o JavaScript. Podremos consultar la web en la URL indicada (*https://nombreusuario.github.io*). Por defecto, la web se asocia a la rama *master* del repositorio.
 
 > **NOTA**: es posible que se tarden unos segundos/minutos en actualizar los cambios subidos al repositorio.
 > **NOTA**: si utilizamos herramientas como Jekyll para generar la web, es posible que se produzcan errores al publicar. Podremos verlos yendo a los *Settings* del repositorio en cuestión. De lo contrario, en esos *Settings* nos dirá que nuestra web está publicada.
 
-* Un proyecto o repositorio.
+* Un proyecto o repositorio. En este caso, creamos un proyecto con el nombre que queramos, y en los *Settings* del repositorio (sección *GitHub pages*), podemos activar GitHub pages y elegir qué rama va a contener las páginas (o una subcarpeta *docs* dentro de la rama). En este caso, la web estará accesible en *https://nombreusuario.github.io/nombre_repositorio*.
