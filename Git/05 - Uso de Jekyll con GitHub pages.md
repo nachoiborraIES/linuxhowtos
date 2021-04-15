@@ -50,3 +50,11 @@ AÑO-MES-DIA-titulo.md
 ```
 
 donde, como hemos dicho, además de la extensión *.markdown* o *.md* también se acepta *.html*.
+
+### 2.2. Uso de páginas
+
+Las páginas del sitio se crean en la raíz del proyecto, bien con extensión Markdown (*.md*) o con extensión *.html*. En el primer caso, la URL para acceder a la página tendrá el mismo nombre de archivo, pero con extensión *.html*.
+
+> **EJEMPLO**: si creamos una página llamada `prueba.md` en la raíz del proyecto, podremos acceder a su contenido con *localhost:4000/prueba.html*.
+
+También en este caso, las páginas disponen de un *front matter* con los metadatos. En estos casos se incluye normalmente el *layout* o plantilla de diseño que se utiliza (suele ser el layout *post* para los posts, y el layout *page* para las páginas), el título, etc. En el caso de las páginas, también se puede definir el *permalink* que se emplea en la URL para referenciar a la página.
