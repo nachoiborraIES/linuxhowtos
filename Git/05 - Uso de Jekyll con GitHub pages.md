@@ -57,4 +57,28 @@ Las páginas del sitio se crean en la raíz del proyecto, bien con extensión Ma
 
 > **EJEMPLO**: si creamos una página llamada `prueba.md` en la raíz del proyecto, podremos acceder a su contenido con *localhost:4000/prueba.html*.
 
-También en este caso, las páginas disponen de un *front matter* con los metadatos. En estos casos se incluye normalmente el *layout* o plantilla de diseño que se utiliza (suele ser el layout *post* para los posts, y el layout *page* para las páginas), el título, etc. En el caso de las páginas, también se puede definir el *permalink* que se emplea en la URL para referenciar a la página.
+También en este caso, las páginas disponen de un *front matter* con los metadatos. En estos casos se incluye normalmente el *layout* o plantilla de diseño que se utiliza (suele ser el layout *post* para los posts, y el layout *page* para las páginas), el título, etc. En el caso de las páginas, también se puede definir el *permalink* que se emplea en la URL para referenciar a la página (en lugar de su nombre).
+
+### 2.3. Otros elementos
+
+Además de los posts y las páginas, la estructura principal del proyecto Jekyll muestra otros tipos de elementos.
+
+* Las gemas de Jekyll, que no trataremos aquí.
+* Una página `404.html` que podemos editar para definir una página a la que se enviará cuando las URLs que se indiquen no se encuentren en la web.
+* Una carpeta `_site` que contiene el sitio automáticamente compilado por Jekyll. Esta carpeta está automáticamente incluida en un archivo `.gitignore` que también se crea, para que no se suba al repositorio remoto.
+* Un archivo `config.yml` de configuración del proyecto, donde podemos cambiar entre otras cosas el título de la web, el e-mail de contacto, la breve descripción, y sobre todo un par de parámetros que debemos definir para que la web sea accesible en GitHub pages: la `baseurl` y la `url`.
+
+## 3. Subir cambios a GitHub
+
+Para subir los cambios de nuestro sitio Jekyll a GitHub, tenemos varias opciones.
+
+### 3.1. Crear repositorio local y subirlo a remoto
+
+Podemos ejecutar un comando `git init` dentro del proyecto Jekyll local para inicializar un repositorio, y luego subir los cambios a un repositorio remoto con estos pasos:
+
+1. Añadir los archivos con `git add .`
+2. Hacer un commit inicial con `git commit -m "Commit inicial"`
+3. Crear un repositorio remoto en GitHub con el nombre que queramos (sin archivo *README* ni ningún contenido)
+4. Conectar el repositorio local con el remoto usando el comando `git remote add origin url_repositorio_remoto`
+5. Hacer un *push* inicial. La primera vez habrá que indicar el nombre de la rama remota para que se emparejen: `git push -u origin master`
+
