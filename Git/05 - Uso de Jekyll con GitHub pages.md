@@ -100,4 +100,7 @@ url: "https://pepe123.github.io"
 ```
 
 Con esto, ya se sabe que la web será accesible desde *https://pepe123.github.io/prueba*, y las plantillas de diseño y demás se localizarán correctamente.
-* 
+
+## 4. Uso de plantillas
+
+Por completar.
