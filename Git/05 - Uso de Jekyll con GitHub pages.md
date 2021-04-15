@@ -103,6 +103,8 @@ Con esto, ya se sabe que la web será accesible desde *https://pepe123.github.io
 
 > **IMPORTANTE**: al cambiar la variable *baseurl*, ésta también afecta a la URL local de pruebas, que dejará de ser *localhost:4000*, y pasaría a ser *localhost:4000/prueba* según el ejemplo anterior.
 
+> **IMPORTANTE**: cualquier cambio en el archivo `config.yml` requiere reiniciar el servidor de pruebas, si lo tenemos lanzado en local.
+
 ## 4. Uso de plantillas
 
 Por completar.
