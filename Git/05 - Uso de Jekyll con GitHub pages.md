@@ -22,11 +22,15 @@ En cualquier momento podemos poner en marcha una especie de servidor local, para
 bundle exec jekyll serve
 ```
 
-Por defecto, podremos acceder a la web en nuestra URL local (*localhost* o 127.0.0.1), por el puerto 4000 (*http://localhost:4000*). El contenido de los diferentes posts que se creen (se crea una web al estilo Wordpress) se almacenan en una carpeta llamada *_posts*.
+Por defecto, podremos acceder a la web en nuestra URL local (*localhost* o 127.0.0.1), por el puerto 4000 (*http://localhost:4000*). 
 
 ## 2. Definiendo el contenido
 
-Todos los archivos de contenido de Jekyll deben tener una serie de metadatos, expresados en formato YAML, delimitados por tres guiones (tanto por arriba como por abajo, lo que se conoce como *front matter*). Por ejemplo:
+En Jekyll podemos especificar dos tipos principales de contenido: posts o páginas.
+
+### 2.1. Uso de posts
+
+Los posts de Jekyll funcionan de forma similar a los de Wordpress. Todos ellos deben tener una serie de metadatos, expresados en formato YAML, delimitados por tres guiones (tanto por arriba como por abajo, lo que se conoce como *front matter*). Por ejemplo:
 
 ```
 ---
