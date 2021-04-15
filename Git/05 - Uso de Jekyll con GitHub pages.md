@@ -101,6 +101,8 @@ url: "https://pepe123.github.io"
 
 Con esto, ya se sabe que la web será accesible desde *https://pepe123.github.io/prueba*, y las plantillas de diseño y demás se localizarán correctamente.
 
+> **IMPORTANTE**: al cambiar la variable *baseurl*, ésta también afecta a la URL local de pruebas, que dejará de ser *localhost:4000*, y pasaría a ser *localhost:4000/prueba* según el ejemplo anterior.
+
 ## 4. Uso de plantillas
 
 Por completar.
