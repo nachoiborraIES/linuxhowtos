@@ -26,7 +26,7 @@ Por defecto, podremos acceder a la web en nuestra URL local (*localhost* o 127.0
 
 ## 2. Definiendo el contenido
 
-Todos los archivos de contenido de Jekyll deben tener una serie de metadatos, delimitados por tres guiones (tanto por arriba como por abajo):
+Todos los archivos de contenido de Jekyll deben tener una serie de metadatos, expresados en formato YAML, delimitados por tres guiones (tanto por arriba como por abajo, lo que se conoce como *front matter*). Por ejemplo:
 
 ```
 ---
@@ -39,3 +39,10 @@ categories: jekyll update
 ... contenido del post
 ```
 
+El contenido del post en sí se puede expresar tanto en HTML como en formato Markdown. Para crear posts, basta con añadir nuevos archivos a la carpeta *_posts*, con el formato de nombre de fichero del que viene como ejemplo:
+
+```
+AÑO-MES-DIA-titulo.md
+```
+
+donde, como hemos dicho, además de la extensión *.markdown* o *.md* también se acepta *.html*.
