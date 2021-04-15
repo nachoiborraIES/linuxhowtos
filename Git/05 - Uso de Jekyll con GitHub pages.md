@@ -22,4 +22,20 @@ En cualquier momento podemos poner en marcha una especie de servidor local, para
 bundle exec jekyll serve
 ```
 
-Por defecto, podremos acceder a la web en nuestra URL local (*localhost* o 127.0.0.1), por el puerto 4000 (*http:/127.0.0.1:4000*).
+Por defecto, podremos acceder a la web en nuestra URL local (*localhost* o 127.0.0.1), por el puerto 4000 (*http://localhost:4000*). El contenido de los diferentes posts que se creen (se crea una web al estilo Wordpress) se almacenan en una carpeta llamada *_posts*.
+
+## 2. Definiendo el contenido
+
+Todos los archivos de contenido de Jekyll deben tener una serie de metadatos, delimitados por tres guiones (tanto por arriba como por abajo):
+
+```
+---
+layout: post
+title: "Welcome to Jekyll!"
+date: 2021-04-15 10:44:22 + 0200
+categories: jekyll update
+---
+
+... contenido del post
+```
+
