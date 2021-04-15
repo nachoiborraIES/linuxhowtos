@@ -81,4 +81,23 @@ Podemos ejecutar un comando `git init` dentro del proyecto Jekyll local para ini
 3. Crear un repositorio remoto en GitHub con el nombre que queramos (sin archivo *README* ni ningún contenido)
 4. Conectar el repositorio local con el remoto usando el comando `git remote add origin url_repositorio_remoto`
 5. Hacer un *push* inicial. La primera vez habrá que indicar el nombre de la rama remota para que se emparejen: `git push -u origin master`
+6. Activar el servicio de GitHub pages en la rama adecuada del repositorio remoto.
 
+### 3.2. Configurar las URL
+
+Comentábamos que en el archivo `config.yml`, entre otras cosas, es necesario configurar los parámetros `baseurl` y `url` para que la web cargue correctamente en GitHub pages.
+
+* El parámetro `baseurl` debe tener el nombre del repositorio donde se ha creado la web (salvo que sea una web de usuario o de organización). Por ejemplo:
+
+```
+baseurl: "/prueba"
+```
+
+* El parámetro `url` debe tener la URL de la web (sin contar la *baseurl* anterior). Por ejemplo:
+
+```
+url: "https://pepe123.github.io"
+```
+
+Con esto, ya se sabe que la web será accesible desde *https://pepe123.github.io/prueba*, y las plantillas de diseño y demás se localizarán correctamente.
+* 
