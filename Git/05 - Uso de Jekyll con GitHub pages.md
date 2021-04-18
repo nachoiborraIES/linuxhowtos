@@ -139,7 +139,7 @@ Podemos editar los elementos de un tema para personalizar su apariencia. Entre o
 
 #### 4.1.1. Variables
 
-Existen una serie de variables predefinidas en los temas, y que podemos consultar [aquí](https://jekyllrb.com/docs/variables/). Por ejemplo, la variable `site` nos da información sobre el sitio, la variable `page` aporta información específica de la página (por ejemplo, podemos acceder a las variables definidas en el *front matter*), y la variable `content` hace referencia al contenido de la página. Dentro de algunas de estas variables, podemos acceder a ciertas propiedades útiles. Por ejemplo, la propiedad `site.pages` es un vector que permite recorrer todas las páginas del sitio.
+Existen una serie de variables predefinidas en los temas, y que podemos consultar [aquí](https://jekyllrb.com/docs/variables/). Por ejemplo, la variable `site` nos da información sobre el sitio, la variable `page` aporta información específica de la página (por ejemplo, podemos acceder a las variables definidas en el *front matter*), y la variable `content` hace referencia al contenido de la página. Dentro de algunas de estas variables, podemos acceder a ciertas propiedades útiles. Por ejemplo, la propiedad `site.pages` es un vector que permite recorrer todas las páginas del sitio, y `page.title` contiene el título de la página.
 
 #### 4.1.2. Includes
 
@@ -150,3 +150,11 @@ Los includes son instrucciones que permiten incorporar otros archivos en el actu
 ```
 
 Los archivos incluidos se buscan dentro de la subcarpeta `_include` del proyecto. Podemos obtener más información sobre el uso de includes [aquí](https://jekyllrb.com/docs/includes/).
+
+#### 4.1.3. Layouts
+
+Los *layouts* se almacenan en la carpeta `_layouts` del proyecto, y son plantillas con una cierta estructura prefijada, sobre las que volcar un determinado contenido. Al menos se suele tener uno llamado `default.html`, que es el *layout* por defecto. Dentro de cada *layout* podemos hacer uso tanto de los *includes* como de las variables vistas antes. En este último caso, para utilizar las variables se incluyen en el contenido del *layout* con esta nomenclatura:
+
+```
+<h1>{{ page.title }}</h1>
+```
