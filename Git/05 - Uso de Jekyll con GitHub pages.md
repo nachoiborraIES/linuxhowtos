@@ -149,7 +149,7 @@ Los includes son instrucciones que permiten incorporar otros archivos en el actu
 {% include cabecera.html %}
 ```
 
-Los archivos incluidos se buscan dentro de la subcarpeta `_include` del proyecto. Podemos obtener más información sobre el uso de includes [aquí](https://jekyllrb.com/docs/includes/).
+Los archivos incluidos se buscan dentro de la subcarpeta `_includes` del proyecto. Podemos obtener más información sobre el uso de includes [aquí](https://jekyllrb.com/docs/includes/).
 
 #### 4.1.3. Layouts
 
@@ -214,3 +214,17 @@ title: Página de inicio
 ---
 ...
 ```
+
+**Crear layouts a partir de otros**
+
+Podemos definir *layouts* que extiendan el contenidode otros (hereden) definiendo en el *front matter* de estos *layouts* secundarios cuál es el *layout* que están extendiendo:
+
+```
+---
+layout: layout
+---
+
+... contenido del layout secundario
+```
+
+Al hacer esto, el contenido del *layout* secundario se añade como contenido (*content*) del layout principal.
