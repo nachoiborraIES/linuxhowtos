@@ -107,4 +107,10 @@ Con esto, ya se sabe que la web será accesible desde *https://pepe123.github.io
 
 ## 4. Uso de plantillas
 
-Por completar.
+Por defecto, cuando creamos un proyecto Jekyll, en el archivo `config.yml` se especifica una plantilla o tema por defecto, en la propiedad `theme`:
+
+```
+theme: minima
+```
+
+Existen una serie de temas predefinidos y soportados por GitHub Pages, que podemos consultar [aquí](https://pages.github.com/themes/).
