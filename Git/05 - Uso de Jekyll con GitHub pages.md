@@ -66,7 +66,7 @@ Además de los posts y las páginas, la estructura principal del proyecto Jekyll
 * Las gemas de Jekyll, que no trataremos aquí.
 * Una página `404.html` que podemos editar para definir una página a la que se enviará cuando las URLs que se indiquen no se encuentren en la web.
 * Una carpeta `_site` que contiene el sitio automáticamente compilado por Jekyll. Esta carpeta está automáticamente incluida en un archivo `.gitignore` que también se crea, para que no se suba al repositorio remoto.
-* Un archivo `config.yml` de configuración del proyecto, donde podemos cambiar entre otras cosas el título de la web, el e-mail de contacto, la breve descripción, y sobre todo un par de parámetros que debemos definir para que la web sea accesible en GitHub pages: la `baseurl` y la `url`.
+* Un archivo `_config.yml` de configuración del proyecto, donde podemos cambiar entre otras cosas el título de la web, el e-mail de contacto, la breve descripción, y sobre todo un par de parámetros que debemos definir para que la web sea accesible en GitHub pages: la `baseurl` y la `url`.
 
 ## 3. Subir cambios a GitHub
 
@@ -85,7 +85,7 @@ Podemos ejecutar un comando `git init` dentro del proyecto Jekyll local para ini
 
 ### 3.2. Configurar las URL
 
-Comentábamos que en el archivo `config.yml`, entre otras cosas, es necesario configurar los parámetros `baseurl` y `url` para que la web cargue correctamente en GitHub pages.
+Comentábamos que en el archivo `_config.yml`, entre otras cosas, es necesario configurar los parámetros `baseurl` y `url` para que la web cargue correctamente en GitHub pages.
 
 * El parámetro `baseurl` debe tener el nombre del repositorio donde se ha creado la web (salvo que sea una web de usuario o de organización). Por ejemplo:
 
@@ -103,11 +103,11 @@ Con esto, ya se sabe que la web será accesible desde *https://pepe123.github.io
 
 > **IMPORTANTE**: al cambiar la variable *baseurl*, ésta también afecta a la URL local de pruebas, que dejará de ser *localhost:4000*, y pasaría a ser *localhost:4000/prueba* según el ejemplo anterior.
 
-> **IMPORTANTE**: cualquier cambio en el archivo `config.yml` requiere reiniciar el servidor de pruebas, si lo tenemos lanzado en local.
+> **IMPORTANTE**: cualquier cambio en el archivo `_config.yml` requiere reiniciar el servidor de pruebas, si lo tenemos lanzado en local.
 
 ## 4. Uso de plantillas
 
-Por defecto, cuando creamos un proyecto Jekyll, en el archivo `config.yml` se especifica una plantilla o tema por defecto, en la propiedad `theme`:
+Por defecto, cuando creamos un proyecto Jekyll, en el archivo `_config.yml` se especifica una plantilla o tema por defecto, en la propiedad `theme`:
 
 ```
 theme: minima
@@ -120,7 +120,7 @@ gem "minima", "->2.0"
 gem "architect"
 ```
 
-Después, procedemos a actualizar las gemas del proyecto para instalar el nuevo tema, con el comando `bundle install`. Después, de esto, ya podemos cambiar la propiedad *theme* en el archivo *config.yml* y lanzar de nuevo el servidor local. Aún así, es posible que algunos temas no tengan los mismos *layouts* que otros, y al poner en marcha Jekyll en local nos diga que no encuentra algunos *layouts*. Entonces, debemos ir a la página del tema en cuestión (podemos acceder a cada una desde el enlace anterior de temas soportados), ir a la subcarpeta *_layouts* y ver cuáles son soportados, para luego usar esos en nuestras páginas y posts. Por ejemplo, el tema *architect* no soporta los layouts de *home*, *post* ni *page*, sólo tiene un layout *default*, por lo que todos los elementos del sitio (páginas y posts) deben usar este layout.
+Después, procedemos a actualizar las gemas del proyecto para instalar el nuevo tema, con el comando `bundle install`. Después, de esto, ya podemos cambiar la propiedad *theme* en el archivo *_config.yml* y lanzar de nuevo el servidor local. Aún así, es posible que algunos temas no tengan los mismos *layouts* que otros, y al poner en marcha Jekyll en local nos diga que no encuentra algunos *layouts*. Entonces, debemos ir a la página del tema en cuestión (podemos acceder a cada una desde el enlace anterior de temas soportados), ir a la subcarpeta *_layouts* y ver cuáles son soportados, para luego usar esos en nuestras páginas y posts. Por ejemplo, el tema *architect* no soporta los layouts de *home*, *post* ni *page*, sólo tiene un layout *default*, por lo que todos los elementos del sitio (páginas y posts) deben usar este layout.
 
 ```
 ---
