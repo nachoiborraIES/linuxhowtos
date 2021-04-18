@@ -120,7 +120,7 @@ gem "minima", "->2.0"
 gem "architect"
 ```
 
-Después, procedemos a actualizar las gemas del proyecto para instalar el nuevo tema, con el comando `bundle install`. Después, de esto, ya podemos cambiar la propiedad *theme* en el archivo *config.yml* y lanzar de nuevo el servidor local. Aún así, es posible que algunos temas no tengan los mismos *layouts* que otros, y al poner en marcha Jekyll en local nos diga que no encuentra algunos *layouts*. Entonces, debemos ir a la página del tema en cuestión (podemos acceder a cada una desde el enlace anterior de temas soportados), ir a la subcarpeta *_layouts* y ver cuáles son soportados, para luego usar esos en nuestras páginas y posts. Por ejemplo, el tema *architect* no soporta los layouts de *post* ni de *page*, sólo tiene un layout *default*, por lo que todos los elementos del sitio (páginas y posts) deben usar este layout.
+Después, procedemos a actualizar las gemas del proyecto para instalar el nuevo tema, con el comando `bundle install`. Después, de esto, ya podemos cambiar la propiedad *theme* en el archivo *config.yml* y lanzar de nuevo el servidor local. Aún así, es posible que algunos temas no tengan los mismos *layouts* que otros, y al poner en marcha Jekyll en local nos diga que no encuentra algunos *layouts*. Entonces, debemos ir a la página del tema en cuestión (podemos acceder a cada una desde el enlace anterior de temas soportados), ir a la subcarpeta *_layouts* y ver cuáles son soportados, para luego usar esos en nuestras páginas y posts. Por ejemplo, el tema *architect* no soporta los layouts de *home*, *post* ni *page*, sólo tiene un layout *default*, por lo que todos los elementos del sitio (páginas y posts) deben usar este layout.
 
 ```
 ---
@@ -132,3 +132,21 @@ categories: jekyll update
 
 ... contenido del post
 ```
+
+### 4.1. Editando un tema
+
+Podemos editar los elementos de un tema para personalizar su apariencia. Entre otras cosas, podemos hacer uso de una serie de variables predefinidas, incluir unos archivos en otros y editar algunos aspectos de diseño.
+
+#### 4.1.1. Variables
+
+Existen una serie de variables predefinidas en los temas, y que podemos consultar [aquí](https://jekyllrb.com/docs/variables/). Por ejemplo, la variable `site` nos da información sobre el sitio, la variable `page` aporta información específica de la página (por ejemplo, podemos acceder a las variables definidas en el *front matter*), y la variable `content` hace referencia al contenido de la página. Dentro de algunas de estas variables, podemos acceder a ciertas propiedades útiles. Por ejemplo, la propiedad `site.pages` es un vector que permite recorrer todas las páginas del sitio.
+
+#### 4.1.2. Includes
+
+Los includes son instrucciones que permiten incorporar otros archivos en el actual.
+
+```
+{% include cabecera.html %}
+```
+
+Los archivos incluidos se buscan dentro de la subcarpeta `_include` del proyecto. Podemos obtener más información sobre el uso de includes [aquí](https://jekyllrb.com/docs/includes/).
