@@ -188,7 +188,7 @@ Si queremos crear nuestros propios *layouts*, debemos crear los archivos en la c
 </html>
 ```
 
-También deberíamos definir el contenido de los archivos `header.html`, `nav.html` y `footer.html` en la carpeta `_include`. Por ejemplo, dentro de `nav.html` podemos hacer un listado que recorra las distintas páginas así:
+También deberíamos definir el contenido de los archivos `header.html`, `nav.html` y `footer.html` en la carpeta `_include`. Por ejemplo, dentro de `nav.html` podemos hacer un listado que recorra las distintas páginas que tengan título (para excluir páginas que no lo tengan, como la *404.html*) así:
 
 ```html
 <ul>
@@ -201,3 +201,14 @@ También deberíamos definir el contenido de los archivos `header.html`, `nav.ht
 ```
 
 > **NOTA**: la propiedad `site.html_pages` obtiene todas las páginas HTML compiladas, ya sean originalmente en HTML o en Markdown. Esto excluye a otros tipos de archivos que admite Jekyll, como archivos de sindicación de contenidos.
+
+Para poder utilizar este *layout* en las páginas, basta con que pongamos el nombre del archivo que hayamos creado (por ejemplo, *layout.html*) en el *front matter* de las distintas páginas:
+
+```
+---
+layout: layout
+title: Página de inicio
+...
+---
+...
+```
