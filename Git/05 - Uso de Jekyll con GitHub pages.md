@@ -153,8 +153,39 @@ Los archivos incluidos se buscan dentro de la subcarpeta `_include` del proyecto
 
 #### 4.1.3. Layouts
 
-Los *layouts* se almacenan en la carpeta `_layouts` del proyecto, y son plantillas con una cierta estructura prefijada, sobre las que volcar un determinado contenido. Al menos se suele tener uno llamado `default.html`, que es el *layout* por defecto. Dentro de cada *layout* podemos hacer uso tanto de los *includes* como de las variables vistas antes. En este último caso, para utilizar las variables se incluyen en el contenido del *layout* con esta nomenclatura:
+Los *layouts* son plantillas con una cierta estructura prefijada, sobre las que volcar un determinado contenido. Al menos se suele tener uno llamado `default.html`, que es el *layout* por defecto. Dentro de cada *layout* podemos hacer uso tanto de los *includes* como de las variables vistas antes. En este último caso, para utilizar las variables se incluyen en el contenido del *layout* con esta nomenclatura:
 
 ```
 <h1>{{ page.title }}</h1>
 ```
+
+Dentro del *front matter* de cada página o post, indicaremos cuál de los *layouts* disponibles en el tema queremos utilizar.
+
+**Crear nuestros propios layouts**
+
+Si queremos crear nuestros propios *layouts*, debemos crear los archivos en la carpeta `_layouts` del proyecto (si no existe la carpeta, deberemos crearla también). Un ejemplo de layout podría ser:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+    <header>
+      {% include header.html %}
+    </header>
+    <nav>
+      {% include nav.html %}
+    </nav>
+    <section>
+      {{ content }}
+    </section>
+    <footer>
+      {% include footer.html %}
+    </footer>
+  </body>
+</html>
+```
+
+También deberíamos definir el contenido de los archivos `header.html`, `nav.html` y `footer.html` en la carpeta `_include`.
