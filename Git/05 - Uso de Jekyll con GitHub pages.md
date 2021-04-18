@@ -193,9 +193,11 @@ También deberíamos definir el contenido de los archivos `header.html`, `nav.ht
 ```html
 <ul>
   {% for page in site.html_pages %}
-    <li>
-      <a href="{{site.baseurl}}{{page.url}}">{{page.title}}</a>
-    </li>
+    {% if page.title %}
+      <li>
+        <a href="{{site.baseurl}}{{page.url}}">{{page.title}}</a>
+      </li>
+    {% endif %}
   {% endfor %}
 </ul>
 ```
