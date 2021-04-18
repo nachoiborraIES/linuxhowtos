@@ -188,4 +188,14 @@ Si queremos crear nuestros propios *layouts*, debemos crear los archivos en la c
 </html>
 ```
 
-También deberíamos definir el contenido de los archivos `header.html`, `nav.html` y `footer.html` en la carpeta `_include`.
+También deberíamos definir el contenido de los archivos `header.html`, `nav.html` y `footer.html` en la carpeta `_include`. Por ejemplo, dentro de `nav.html` podemos hacer un listado que recorra las distintas páginas así:
+
+```html
+<ul>
+  {% for page in site.html_pages %}
+    <li>
+      <a href="{{site.baseurl}}{{page.url}}">{{page.title}}</a>
+    </li>
+  {% endfor %}
+</ul>
+```
