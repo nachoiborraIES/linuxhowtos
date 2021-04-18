@@ -199,3 +199,5 @@ También deberíamos definir el contenido de los archivos `header.html`, `nav.ht
   {% endfor %}
 </ul>
 ```
+
+> **NOTA**: la propiedad `site.html_pages` obtiene todas las páginas HTML compiladas, ya sean originalmente en HTML o en Markdown. Esto excluye a otros tipos de archivos que admite Jekyll, como archivos de sindicación de contenidos.
