@@ -113,4 +113,22 @@ Por defecto, cuando creamos un proyecto Jekyll, en el archivo `config.yml` se es
 theme: minima
 ```
 
-Existen una serie de temas predefinidos y soportados por GitHub Pages, que podemos consultar [aquí](https://pages.github.com/themes/).
+Existen una serie de temas predefinidos y soportados por GitHub Pages, que podemos consultar [aquí](https://pages.github.com/themes/). Sin embargo, si queremos utilizar ese mismo tema en local para hacer pruebas previas, debemos descargarlo, y para ello, debemos modificar el archivo *Gemfile* del proyecto, y añadir el tema en cuestión. Por ejemplo, así añadiríamos el tema *architect*:
+
+```
+gem "minima", "->2.0"
+gem "architect"
+```
+
+Después, procedemos a actualizar las gemas del proyecto para instalar el nuevo tema, con el comando `bundle install`. Después, de esto, ya podemos cambiar la propiedad *theme* en el archivo *config.yml* y lanzar de nuevo el servidor local. Aún así, es posible que algunos temas no tengan los mismos *layouts* que otros, y al poner en marcha Jekyll en local nos diga que no encuentra algunos *layouts*. Entonces, debemos ir a la página del tema en cuestión (podemos acceder a cada una desde el enlace anterior de temas soportados), ir a la subcarpeta *_layouts* y ver cuáles son soportados, para luego usar esos en nuestras páginas y posts. Por ejemplo, el tema *architect* no soporta los layouts de *post* ni de *page*, sólo tiene un layout *default*, por lo que todos los elementos del sitio (páginas y posts) deben usar este layout.
+
+```
+---
+layout: default
+title: "Welcome to Jekyll!"
+date: 2021-04-15 10:44:22 + 0200
+categories: jekyll update
+---
+
+... contenido del post
+```
