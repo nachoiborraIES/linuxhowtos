@@ -40,4 +40,4 @@ El archivo de configuración `.travis.yml` que debemos añadir en la raíz de lo
 * La propiedad `language` alude al lenguaje en que está desarrollado el proyecto. Puede ser PHP, Java, etc.
 * A partir de la opción anterior, también podemos establecer la versión (o versiones) para las que queremos hacer las pruebas. Por ejemplo, podríamos pasar pruebas en un proyecto PHP tanto para PHP 7.2 como para PHP 5.4
 * La propiedad `beforeScript` indica el comando (o comandos) a ejecutar antes de realizar las pruebas. Por ejemplo, si estamos probando un proyecto PHP, lo suyo sería ejecutar `composer install` para instalar las dependencias del proyecto antes.
-* La propiedad `script` es el comando que va a lanzar las pruebas. En el caso de un proyecto PHP con PHPUnit, por ejemplo, ese comando podría ser `phpunit tests`.
+* La propiedad `script` es el comando que va a lanzar las pruebas. En el caso de un proyecto PHP con PHPUnit, por ejemplo, y suponiendo que tenemos los tests almacenados en una subcarpeta *tests*, ese comando podría ser `phpunit tests`.
