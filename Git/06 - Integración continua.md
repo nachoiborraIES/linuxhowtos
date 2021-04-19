@@ -9,7 +9,11 @@ Esta metodología está muy vinculada otras dos:
 
 ## 1. Introducción a Travis CI
 
-Travis CI es la herramienta incorporada en GitHub para integración continua. Los pasos para establecer la integración continua en un repositorio son:
+Travis CI es la herramienta incorporada en GitHub para integración continua. Para poderlo utilizar, debemos darnos de alta en su web, [travis-ci.com](https://www.travis-ci.com/). Podemos (debemos) hacerlo con nuestra propia cuenta de GitHub, con lo que ambas aplicaciones quedan conectadas y autorizadas.
+
+> **NOTA**: hasta hace poco, la web oficial era *travis-ci.org*, pero dejará de estar operativa en breve.
+
+Los pasos para establecer la integración continua en un repositorio son:
 
 1. Activar el repositorio en cuestión desde la herramienta Travis
 2. Crear en el repositorio el fichero de configuración de Travis para realizar la integración continua. Por defecto, este archivo debe llamarse `.travis.yml`.
@@ -21,3 +25,19 @@ Travis CI es la herramienta incorporada en GitHub para integración continua. Lo
 Para realizar la ejecución de los tests que desarrollemos, se siguen también una serie de pasos. Estos pasos se realizan desde Travis automáticamente, y consisten en crear una máquina virtual, clonar el repositorio, instalar las dependencias necesarias (según lo que hayamos indicado en el archivo `.travis.yml` y ejecutar los tests. Finalmente, también se pueden realizar otras acciones complementarias, como desplegar la aplicación, etc. Tanto si se pasan los tests como si no, se notifica al propietario del repositorio sobre los resultados.
 
 Si se realiza una *pull request* sobre un repositorio en el que tengamos activada la integración continua, en los propios comentarios de la *pull request* se nos informa si se han pasado las pruebas o no, y en función de eso podemos decidir si se incorporan los cambios o no al proyecto.
+
+## 2. Manejo básico de Travis CI
+
+Una vez nos hemos dado de alta en Travis con nuestra cuenta de GitHub y hemos confirmado o validado esa cuenta, podremos entrar en Travis. En la sección de *Settings* (desplegando el icono superior derecho) podemos ver nuestros repositorios en GitHub, y activar/desactivar la integración continua en cada uno de ellos, marcando o desmarcando el interruptor correspondiente.
+
+> **NOTA**: al principio, deberemos activar la integración con GitHub Apps para poder ver los repositorios.
+> **NOTA**: si tenemos organizaciones asociadas a nuestra cuenta GitHub, podemos darles permisos para Travis yendo a los *Settings* de GitHub, y en la sección de *Applications*, permitir (*Grant*) el acceso a Travis para aquellas organizaciones de las que seamos propietarios.
+
+### 2.1. El archivo *.travis.yml*
+
+El archivo de configuración `.travis.yml` que debemos añadir en la raíz de los proyectos en los que queramos habilitar la integración continua tiene una serie de propiedades que debemos conocer:
+
+* La propiedad `language` alude al lenguaje en que está desarrollado el proyecto. Puede ser PHP, Java, etc.
+* A partir de la opción anterior, también podemos establecer la versión (o versiones) para las que queremos hacer las pruebas. Por ejemplo, podríamos pasar pruebas en un proyecto PHP tanto para PHP 7.2 como para PHP 5.4
+* La propiedad `beforeScript` indica el comando (o comandos) a ejecutar antes de realizar las pruebas. Por ejemplo, si estamos probando un proyecto PHP, lo suyo sería ejecutar `composer install` para instalar las dependencias del proyecto antes.
+* La propiedad `script` es el comando que va a lanzar las pruebas. En el caso de un proyecto PHP con PHPUnit, por ejemplo, ese comando podría ser `phpunit tests`.
