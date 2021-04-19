@@ -47,3 +47,5 @@ En cuanto hagamos un *push* de un proyecto configurado con Travis en GitHub, aut
 ### 2.2. Travis y *pull requests*
 
 Además de subiendo (*push*) la propia rama principal, también podemos crear trabajo en una rama paralela, subirla con *push* a su rama asociada remota, y luego hacer un *pull request* en GitHub para integrar esa rama con la principal (la operación *pull request*, además de para solicitar integrar cambios en un proyecto ajeno, también puede servir para combinar ramas). En este caso, si el repositorio tiene la integración continua activada, desde GitHub (en los mensajes de la *pull request*) podremos ver que se queda pendiente de que Travis complete las pruebas, pudiendo así esperar el resultado antes de decidir si se mezclan las ramas o no. De hecho, al confirmar el *merge* de las ramas, se tendrá un nuevo *commit* que provocará otra integración más de Travis.
+
+Podemos consultar más información sobre lenguajes permitidos, pasos a seguir en cada uno, etc en la [documentación oficial de Travis](https://docs.travis-ci.com/).
