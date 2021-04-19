@@ -31,7 +31,8 @@ Si se realiza una *pull request* sobre un repositorio en el que tengamos activad
 Una vez nos hemos dado de alta en Travis con nuestra cuenta de GitHub y hemos confirmado o validado esa cuenta, podremos entrar en Travis. En la sección de *Settings* (desplegando el icono superior derecho) podemos ver nuestros repositorios en GitHub, y activar/desactivar la integración continua en cada uno de ellos, marcando o desmarcando el interruptor correspondiente.
 
 > **NOTA**: al principio, deberemos activar la integración con GitHub Apps para poder ver los repositorios.
-> **NOTA**: si tenemos organizaciones asociadas a nuestra cuenta GitHub, podemos darles permisos para Travis yendo a los *Settings* de GitHub, y en la sección de *Applications*, permitir (*Grant*) el acceso a Travis para aquellas organizaciones de las que seamos propietarios.
+> 
+> **NOTA**: si tenemos organizaciones asociadas a nuestra cuenta GitHub, podemos darles permisos para Travis yendo a los *Settings* de GitHub, y en la sección de *Applications*, permitir (*Grant*) el acceso a Travis para aquellas organizaciones de las que seamos propietarios. En caso de no encontrar esta opción, desde el panel izquierdo de nuestro perfil en Travis también podemos solicitar el acceso de las organizaciones que queramos.
 
 ### 2.1. El archivo *.travis.yml*
 
